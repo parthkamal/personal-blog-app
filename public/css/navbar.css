@@ -1,0 +1,48 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+nav{
+    display: flex;
+    width: 100%;
+    padding: 1em;
+    align-items: center;
+    position: fixed;
+    box-shadow: -1px 0 5px 1px;
+}
+
+nav div{
+    width: 20%;
+    margin-right: auto;
+    text-transform: capitalize;
+}
+
+nav ul{
+    display: flex;
+    list-style: none;
+    margin-left: auto;
+    width: 40%;
+    align-items: center;
+    justify-content: space-evenly;
+
+}
+
+button {
+    background-color: rebeccapurple;
+    color: white;
+    border-style: none;
+    position: absolute;
+    padding: 0.5em;
+    top: 10%;
+}
+
+nav li{
+    text-transform: capitalize;
+}

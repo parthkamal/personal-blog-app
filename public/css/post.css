@@ -1,0 +1,15 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+.post-heading{
+    padding: 1em;
+    font-weight: 400;
+}
+
+.post-body{
+    padding: 1em;
+    font-weight: 200;
+}
