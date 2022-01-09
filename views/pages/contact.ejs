@@ -1,0 +1,9 @@
+<%- include('../components/header') %>
+    <%- include('../components/navbar') %>
+    <h3 style="text-align: center;padding: 1em;">Contact me</h3>
+        <div class="contacts">
+            <% hyperlinks.forEach(hyperlink=> { %>
+                <%- include('../components/hyperlink',{hyperlink:hyperlink}) %>
+                    <% }) %>
+        </div>
+        <%- include('../components/form') %>

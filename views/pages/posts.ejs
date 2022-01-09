@@ -1,14 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Parth Kamal</title>
-  </head>
-  <body>
-    <% posts.forEach((post)=>{ %>
-         <%- include('post',{heading:post.heading,body:post.body}); %> 
-        <% }); %>
-  </body>
-</html>
+<%- include('../components/header') %> 
+<%- include('../components/navbar') %> 
+<div><h4>recent posts</h4></div>
+<div class="posts">
+    <% for( let i = 0; i < 500; i++ ) { %>
+        <%- include('../components/shortpost',{post:post}) %> 
+    <% } %>
+</div>
+
+
