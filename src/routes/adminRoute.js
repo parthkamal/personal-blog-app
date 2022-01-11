@@ -1,5 +1,5 @@
 import express from "express";
-import { adminAuthRegister } from "../middlewares/adminAuth.js";
+import { adminAuthRegister } from "../controllers/adminAuth.js";
 const router=express.Router();
 
 
