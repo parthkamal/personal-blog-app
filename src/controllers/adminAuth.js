@@ -42,24 +42,11 @@ export const adminAuthRegister = async (req, res) => {
             password: encryptedPassword,
         })
             .then((admin) => {
-                //creating the token for the registered admin
-                const token = jwt.sign(
-                    { admin_id: admin._id, email },
-                    process.env.TOKEN_KEY,
-                    {
-                        expiresIn: "2h",
-                    }
-                );
-
-                //attaching token to the created admin
-                admin.token = token;
-
                 console.log(admin);
                 //return the user with the token attached to it
-
                 return res.status(200).json({
                     user: { admin },
-                    message: "successfully registered",
+                    message: "successfully registered go to login for getting the token",
                 });
             })
             .catch((err) => {
