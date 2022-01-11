@@ -3,7 +3,11 @@ import express from "express";
 import { fileURLToPath } from "url";
 import { dirname } from "path";
 import adminRoute from './src/routes/adminRoute.js';
-import userRoute from './src/routes/userRoute.js'
+import userRoute from './src/routes/userRoute.js';
+import { mongoooseConnection } from "./src/config/database.js";
+import dotenv from 'dotenv';
+dotenv.config();
+
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -13,7 +17,14 @@ const app = express();
 app.set("view engine", "ejs");
 
 //app middlewares
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: true })); //to encrypt the url encoded data sent from the client
+app.use(express.json());
+
+//database connection
+mongoooseConnection();
+
+
+//routes
 app.use('/admin',adminRoute);
 app.use('/',userRoute);
 
@@ -22,7 +33,8 @@ app.use(express.static(__dirname + "/views"));
 app.use(express.static(__dirname + "/public"));
 
 
+
 //setting port of the server
-app.listen(8080, () => {
+app.listen(process.env.PORT, () => {
   console.log("server listening at port 8080");
 });
