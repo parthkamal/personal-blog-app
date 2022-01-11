@@ -1,12 +1,18 @@
 import express from "express";
-import { adminAuthRegister } from "../controllers/adminAuth.js";
+import { adminAuthLogin, adminAuthRegister } from "../controllers/adminAuth.js";
+import { verfiyToken } from "../middlewares/adminAuth.js";
 const router=express.Router();
 
 
 router.post('/register',adminAuthRegister);
 
-router.get('/signin',(req,res)=>{
-    res.render('components/adminform');
-});
+router.post('/login',adminAuthLogin);
+
+router.get('/',verfiyToken,(req,res)=>{
+    res.status(200).json({
+        "message":"welcome admin",
+        user:req.user,
+    })
+})
 
 export default router;
