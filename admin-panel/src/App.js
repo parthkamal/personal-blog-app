@@ -9,6 +9,9 @@ import Resume from "./pages/Resume";
 import About from "./pages/About";
 import AboutUpload from "./components/AboutUpload";
 import ContactUpload from "./components/ContactUPload";
+import ProjectUpload from "./components/ProjectUpload";
+import ResumeUpload from "./components/ResumeUpload";
+
 
 class App extends Component {
   render() {
@@ -24,8 +27,8 @@ class App extends Component {
         {/* create routes */}
         <Route path="/about/create" element={<AboutUpload/>}/>
         <Route path="/contact/create" element={<ContactUpload/>}/>
-        <Route path="/projects/create" element={<AboutUpload/>}/>
-        <Route path="/resume/create" element={<AboutUpload/>}/>
+        <Route path="/projects/create" element={<ProjectUpload/>}/>
+        <Route path="/resume/create" element={<ResumeUpload/>}/>
         <Route path="/posts/create" element={<AboutUpload/>}/>
         {/* edit routes */}
 

@@ -18,7 +18,7 @@ const app = express();
 app.set("view engine", "ejs");
 
 //app middlewares
-app.use(express.urlencoded({ extended: true })); //to encrypt the url encoded data sent from the client
+app.use(express.urlencoded()); //to encrypt the url encoded data sent from the client
 app.use(express.json());
 app.use(cors());
 

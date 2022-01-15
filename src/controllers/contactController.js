@@ -1,5 +1,6 @@
 import Contact from "../models/contact.js";
 export const contactController = (req, res) => {
+
     Contact.find((err, contacts) => {
         if (err) {
             console.log(err);
@@ -12,7 +13,7 @@ export const contactController = (req, res) => {
     }) 
 }
 
-export const contactPOSTController = async (req, res) => {
+export const contactPOSTController =  async(req, res) => {
     try {
         console.log('fire hua kuch');
         //we are not getting the post the error might be cors policy iguess

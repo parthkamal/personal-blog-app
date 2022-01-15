@@ -7,17 +7,17 @@ function ContactUpload(props) {
     const [link,setLink]=useState("");
 
     const uploadContact =async ()=>{
-        const formData = new FormData();
-        formData.append('title',title);
-        formData.append('link',link);
-        formData.forEach(pair => {
-            console.log(pair);
-        });
+        //preparing the json object
+        const json = JSON.stringify({
+            title:title,
+            link:link
+        })
+        const headers={
+            'Content-type':'application/json'
+        }
         try {
             console.log('try karta hu')
-            const res =await axios.post('http://localhost:8080/admin/contact',formData,{
-                headers: { 'content-type': 'application/json' }
-            });
+            const res =await axios.post('http://localhost:8080/admin/contact',json,{headers});
             console.log(res);
         } catch (error) {
             console.log("eror de rha mac",error);

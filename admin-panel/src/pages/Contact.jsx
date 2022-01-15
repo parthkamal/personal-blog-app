@@ -7,22 +7,22 @@ function Contact() {
         const fetchContact = async()=>{
             try {
                 const res = await axios.get('http://localhost:8080/admin/contact');
-                setContacts(res.data);
+                setContacts(res.data)
                 console.log(res.data);
             } catch (error) {
                 console.log(error);
             }
         }
         fetchContact();
-    })
+    },[])
     return <>
     <h1>contact page</h1>
     <Link to='/contact/create' >add contact </Link>
-    {contacts.forEach(contact=>{
-        <div className="contact">
+    {contacts.map(contact=>{
+        return (<div className="contact" key={contact._id}>
             <div className="contact-title">{contact.title}</div>
             <div className="contact-link">{contact.link}</div>
-        </div>
+        </div>)
 
     })}
     </>;

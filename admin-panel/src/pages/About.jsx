@@ -24,14 +24,14 @@ function About() {
     return <><div className="about-group">
         <h1>about section</h1>
         <Link to='/about/create' >add about post</Link>
-        {abouts.map((post)=>{
+        {abouts.map((about)=>{
             //convert the image buffer to base64
-            const img = new Buffer.from(post.image.data).toString('base64');
+            const img = new Buffer.from(about.image.data).toString('base64');
             return (
-                <div className="post">
+                <div className="about" key={about._id}>
                     <img src={`data:image/png;base64,${img}`} style={{width:70,height:50}} alt="" />
-                    <div className="title">{post.title}</div>
-                    <div className="description">{post.description}</div>
+                    <div className="title">{about.title}</div>
+                    <div className="description">{about.description}</div>
                 </div>
             )
         })}

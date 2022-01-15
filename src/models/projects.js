@@ -5,8 +5,8 @@ const projecSchema = new mongoose.Schema({
         type:String,
         default:null
     },
-    description:[{type:String}],
-    links:{type:String,default:null}
+    description:{type:String,default:null},
+    link:{type:String,default:null}
 },{timestamps:true});
 
 export default mongoose.model('project',projecSchema);
