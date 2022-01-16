@@ -1,0 +1,10 @@
+<div class="about">
+    <% const img=new Buffer.from(about.image.data).toString('base64'); %>
+        <img src="<%= `data:image/png;base64,${img}` %> " alt="">
+        <div class="about-title">
+            <%= about.title %>
+        </div>
+        <div class="about-description">
+            <%= about.description %>
+        </div>
+</div>

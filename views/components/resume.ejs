@@ -1,0 +1,17 @@
+<div class="resume">
+    <div class="resume-title">
+        <%= resume.title %>
+    </div>
+    <% const points=resume.description.split('*') %>
+        <% const links=resume.links.split(' ') %>
+    <ul class="resume-description">
+        <% points.forEach(point => { %>
+         <li><%= point %></li>
+        <% }) %>
+    </ul>
+    <div class="resume-links">
+        <% links.forEach((link,index) => { %>
+         <a href="<%= link %> "><%= `link related to experirence${index}` %> </a>
+        <% }) %>
+    </div> 
+</div>

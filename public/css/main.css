@@ -49,33 +49,7 @@ nav ul {
   align-items: center;
   justify-content: space-evenly;
 }
-
-.article {
-  width: 50%;
-  padding: 2em;
-  margin: auto;
-  margin-top: 10px;
-  border: 2px solid grey;
-  border-radius: 10px;
-}
-
-.article-title {
-  font-weight: 600;
-  margin-bottom: 10px;
-}
-
-.posts {
-  width: 80%;
-  margin: auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-}
-
-.shortpost {
-  padding: 1.5em;
-  border: 1px solid grey;
-  border-radius: 5px;
-}
+/* main components styling */
 
 .hyperlink-title {
   background-color: lightblue;
@@ -120,3 +94,55 @@ input[type="submit"] {
 textarea {
   margin-bottom: 10px;
 }
+
+/* styling the about route */
+
+/* styling the about route */
+
+/* styling the project route */
+
+.project,
+.resume,
+.about,
+.post {
+  border: 1px solid grey;
+  width: 50%;
+  margin: auto;
+  margin-top: 10px;
+  padding: 1.5em;
+  border-radius: 5px;
+}
+.about img,
+.post img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.project a,
+.resume a {
+  color: white;
+  background-color: #0275d8;
+  padding: 0.5em;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+.project-title,
+.resume-title,
+.about-title,
+.post-title {
+  font-weight: 600;
+  padding: 1em;
+}
+
+.project-description,
+.resume-description,
+.post-description {
+  padding: 1em;
+}
+
+/* styling the project route */
+
+/* styling the resume route */
+
+/* styling the resume route */

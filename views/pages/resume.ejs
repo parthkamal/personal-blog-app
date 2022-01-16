@@ -1,2 +1,5 @@
-<%- include('../components/header') %> 
-<%- include('../components/navbar') %> 
+<%- include('../components/header') %>
+    <%- include('../components/navbar') %>
+        <% resumes.forEach(resume=> { %>
+            <%- include('../components/resume',{resume}) %>
+                <% }) %>

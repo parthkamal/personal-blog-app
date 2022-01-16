@@ -1,0 +1,14 @@
+<div class="project">
+    <div class="project-title">
+        <%= project.title %>
+    </div>
+    <ul class="project-description">
+        <% const points=project.description.split('*') %>
+            <% points.forEach(point=> { %>
+                <li>
+                    <%= point %>
+                </li>
+                <% }) %>
+    </ul>
+    <a href="<%= project.link %> ">Link to the project</a>
+</div>

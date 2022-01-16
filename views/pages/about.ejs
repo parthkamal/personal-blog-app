@@ -1,6 +1,5 @@
-<%- include ('../components/header') %> 
-<%- include('../components/navbar') %> 
-<% for( let i = 0; i < 5; i++ ) { %>
-    <%- include('../components/article',{article}) %> 
-<% } %>
-
+<%- include ('../components/header') %>
+    <%- include('../components/navbar') %>
+        <% abouts.forEach(about=> { %>
+            <%- include('../components/about',{about}) %>
+                <% }) %>
