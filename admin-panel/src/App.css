@@ -4,6 +4,12 @@
   box-sizing: border-box;
 }
 
+/* global classes */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 /* styles for authentication form  */
 .authentication-form {
   margin: auto;
@@ -35,3 +41,31 @@ button {
   border-radius: 5px;
   border-style: none;
 }
+/* styles for authentication form  */
+
+/* style for admin panel navbar */
+nav {
+  display: flex;
+  /* height: 50px; */
+  padding: 1em;
+  border: 1px solid black;
+  align-items: center;
+}
+
+nav a {
+  text-transform: capitalize;
+}
+.logo {
+  margin-left: 10px;
+}
+
+.navbar-admin {
+  width: 50%;
+  margin-left: auto;
+  align-items: center;
+  justify-content: space-evenly;
+  display: flex;
+  list-style-type: none;
+}
+
+/* styles for admin panel dashobard */
