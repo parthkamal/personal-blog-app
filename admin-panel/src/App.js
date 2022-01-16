@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
-import Dashboard from "./pages/MainDashboard";
 import Contact from "./pages/Contact";
 import Posts from "./pages/Posts";
 import Projects from "./pages/Projects";
@@ -13,6 +12,7 @@ import ProjectUpload from "./components/ProjectUpload";
 import ResumeUpload from "./components/ResumeUpload";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from './pages/RegisterPage';
+import MainDashboard from "./pages/MainDashboard";
 
 
 class App extends Component {
@@ -22,7 +22,7 @@ class App extends Component {
        <Routes>
         <Route path="/login" element={<LoginPage/>}/>
         <Route path="/register" element={<RegisterPage/>}/>
-        <Route exact path="/" element={<Dashboard/>}/>
+        <Route exact path="/" element={<MainDashboard/>}/>
         <Route path="/about" element={<About/>}/>
         <Route path="/contact" element={<Contact/>}/>
         <Route path="/projects" element={<Projects/>}/>

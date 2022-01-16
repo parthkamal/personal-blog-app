@@ -27,13 +27,13 @@ function ResumeUpload(props) {
     }
 
     return <>
-        <label htmlFor="title">title:</label>
+    <div className="authentication-form">
         <input type="text" name='title' placeholder='resume title' onChange={(e) => { setTitle(e.target.value) }} />
-        <label htmlFor="links">description:</label>
         <input type="text" name='links' placeholder='resume description' onChange={(e) => { setDescription(e.target.value) }} />
-        <label htmlFor="links">links:</label>
         <input type="text" name='links' placeholder='resume link' onChange={(e) => { setLink(e.target.value) }} />
         <button onClick={uploadresume}>upload resume</button>
+    </div>
+       
     </>;
 }
 

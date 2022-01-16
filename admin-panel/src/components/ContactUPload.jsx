@@ -25,11 +25,12 @@ function ContactUpload(props) {
     }
     return (
         <React.Fragment>
-            <label htmlFor="title">title:</label>
+            <div className="authentication-form">
             <input type="text"  name='title' placeholder='contact title' onChange={(e)=>{setTitle(e.target.value)}}/>
-            <label htmlFor="links">links:</label>
             <input type="text" name='links' placeholder='contact link' onChange={(e)=>{setLink(e.target.value)}} />
             <button  onClick={uploadContact}>upload contact</button>
+            </div>
+            
         </React.Fragment>
     );
 }

@@ -7,14 +7,16 @@ import { projectController ,projectPOSTController} from "../controllers/projectC
 import { resumeController,resumePOSTController} from "../controllers/resumeController.js";
 import editRoute from './adminEditRoute.js'
 import multer from "multer";
+import { verfiyToken } from "../middlewares/adminAuth.js";
 const router=express.Router();
 
 //edit router for editing any thing
 router.use('/edit',editRoute);
 
 //verify token middleware 
-router.get('/',(req,res)=>{
-    res.status(200).json({
+router.get('/',verfiyToken,(req,res)=>{
+    console.log('hello madarchod');
+     return res.status(200).json({
         "message":"welcome admin",
         user:req.user,
     })

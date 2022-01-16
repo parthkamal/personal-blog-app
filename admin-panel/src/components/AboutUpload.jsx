@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import "../../src/App.css";
+
 
 
 function AboutUpload(props) {
@@ -37,13 +39,14 @@ function AboutUpload(props) {
         setFileName(e.target.files[0].name)
     }
     return (<React.Fragment>
-        <h1>fshkfhak</h1>
-        <label htmlFor="title">label:</label>
+        <div className="authentication-form">
+        <h1>Create About</h1>
         <input type="text" name='title' placeholder='about title' value={title} onChange={(e) => { setTitle(e.target.value) }} />
-        <label htmlFor="description">:description</label>
         <input type="text" name='description' placeholder='about description' value={description} onChange={(e) => { setDescription(e.target.value) }} />
         <input type="file" onChange={saveFile} />
         <button onClick={uploadFile} >Upload</button>
+        </div>
+        
     </React.Fragment>);
 }
 
