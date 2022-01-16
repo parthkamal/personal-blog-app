@@ -11,6 +11,8 @@ import AboutUpload from "./components/AboutUpload";
 import ContactUpload from "./components/ContactUPload";
 import ProjectUpload from "./components/ProjectUpload";
 import ResumeUpload from "./components/ResumeUpload";
+import LoginPage from "./pages/LoginPage";
+import RegisterPage from './pages/RegisterPage';
 
 
 class App extends Component {
@@ -18,6 +20,8 @@ class App extends Component {
     return (
       <>
        <Routes>
+        <Route path="/login" element={<LoginPage/>}/>
+        <Route path="/register" element={<RegisterPage/>}/>
         <Route exact path="/" element={<Dashboard/>}/>
         <Route path="/about" element={<About/>}/>
         <Route path="/contact" element={<Contact/>}/>
