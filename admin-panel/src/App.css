@@ -88,6 +88,12 @@ nav a {
   color: white;
   padding: 1em;
 }
+
+.event-links {
+  display: flex;
+  list-style-type: none;
+}
+
 .about {
   padding: 1em;
   border: 1px solid grey;
@@ -96,6 +102,9 @@ nav a {
   border-radius: 5px;
   margin: auto;
   margin-top: 15px;
+}
+
+.about a {
 }
 
 .about img {

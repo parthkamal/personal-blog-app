@@ -46,7 +46,7 @@ router.get('/resume',resumeController);
 router.post('/login',adminAuthLogin);
 router.post('/register',adminAuthRegister);
 router.post('/about',upload.single('file'),aboutPOSTController);
-router.post('/posts',postPOSTController);
+router.post('/posts',upload.single('file'),postPOSTController);
 router.post('/projects',projectPOSTController);
 router.post('/contact',contactPOSTController);
 router.post('/resume',resumePOSTController);

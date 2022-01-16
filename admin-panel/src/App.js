@@ -13,6 +13,7 @@ import ResumeUpload from "./components/ResumeUpload";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from './pages/RegisterPage';
 import MainDashboard from "./pages/MainDashboard";
+import PostUpload from "./components/PostUpload";
 
 
 class App extends Component {
@@ -33,7 +34,7 @@ class App extends Component {
         <Route path="/contact/create" element={<ContactUpload/>}/>
         <Route path="/projects/create" element={<ProjectUpload/>}/>
         <Route path="/resume/create" element={<ResumeUpload/>}/>
-        <Route path="/posts/create" element={<AboutUpload/>}/>
+        <Route path="/posts/create" element={<PostUpload/>}/>
         {/* edit routes */}
 
       </Routes>
