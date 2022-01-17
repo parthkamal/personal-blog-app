@@ -41,3 +41,9 @@ export const projectPOSTController =  async(req, res) => {
         res.status(400).json({ message: err });
     }
 }
+
+
+export const projectPUTController = async (e)=>{
+    console.log('project put controller');
+    
+}

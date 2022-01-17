@@ -2,7 +2,6 @@ import Post from "../models/post.js";
 import fs from 'fs';
 import path from 'path';
 
-
 export const postController = (req, res) => {
     Post.find((err, items) => {
         if (err) {
@@ -24,7 +23,6 @@ export const postPOSTController = async (req, res) => {
         console.log("invalid input for about post");
         res.status(400).json({ message: "invalid input for about post" });
     } else {
-        console.log("reached to the right road");
         // console.log(__dirname);
         //upload from the multer disk system to the mongo database
         // console.log(req.file.filename);
@@ -37,7 +35,7 @@ export const postPOSTController = async (req, res) => {
                 data: fs.readFileSync(path.join("uploads/" + req.file.filename)),
                 contentType: "image/png",
             },
-           
+
         };
         Post.create(obj)
             .then((post) => {
@@ -51,5 +49,41 @@ export const postPOSTController = async (req, res) => {
                 console.log(error);
                 res.status(400).json({ message: error });
             });
+    }
+};
+
+
+export const postPUTController = async (req, res) => {
+    console.log('post PUT controller fired');
+    // console.log(req.body);
+    const { title, description, links, id } = req.body;
+    console.log(id);
+    console.log(req.file);
+    console.log(description);
+    console.log(links);
+    console.log(title);
+    //req params validation
+    if (!(title && description && id && links && req.file)) {
+        res.status(200).json({
+            message: 'invalid edit post request',
+        })
+    } else {
+        //object preparation
+        const obj = {
+            title, description, links,
+            image: {
+                data: fs.readFileSync(path.join("uploads/" + req.file.filename)),
+                contentType: "image/png",
+            },
+        };
+        Post.findByIdAndUpdate(id, obj).then((post) => {
+            res.status(200).json({
+                post: post,
+                message: 'ye lo tmhari edited post',
+            })
+        }).catch((error) => {
+            console.log(error);
+            res.status(200).json({ message: err });
+        });
     }
 };

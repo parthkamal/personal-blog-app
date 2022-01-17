@@ -41,3 +41,7 @@ export const resumePOSTController =  async(req, res) => {
         res.status(400).json({ message: err });
     }
 }
+
+export const resumePUTController = async (req,res)=>{
+    console.log('resume put controller fired');
+}

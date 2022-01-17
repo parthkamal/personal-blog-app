@@ -41,3 +41,8 @@ export const contactPOSTController =  async(req, res) => {
         res.status(400).json({ message: err });
     }
 }
+
+export const contactPUTController = async (req,res)=>{
+    console.log('contact put controller fired');
+    
+}

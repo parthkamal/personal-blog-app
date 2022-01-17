@@ -48,3 +48,9 @@ export const aboutPOSTController = async (req, res) => {
         })
     }
 }
+
+
+//controller for the put request
+export const aboutPUTController = async (req,res)=>{
+    console.log('about put controller fired');
+}

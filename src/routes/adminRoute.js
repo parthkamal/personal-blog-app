@@ -1,10 +1,10 @@
 import express from "express";
 import { adminAuthLogin, adminAuthRegister } from "../controllers/adminAuth.js";
-import { aboutController,aboutPOSTController } from "../controllers/aboutController.js";
-import { contactController,contactPOSTController } from "../controllers/contactController.js";
-import { postController ,postPOSTController} from "../controllers/postController.js";
-import { projectController ,projectPOSTController} from "../controllers/projectConroller.js";
-import { resumeController,resumePOSTController} from "../controllers/resumeController.js";
+import { aboutController,aboutPOSTController, aboutPUTController } from "../controllers/aboutController.js";
+import { contactController,contactPOSTController, contactPUTController } from "../controllers/contactController.js";
+import { postController ,postPOSTController, postPUTController} from "../controllers/postController.js";
+import { projectController ,projectPOSTController, projectPUTController} from "../controllers/projectConroller.js";
+import { resumeController,resumePOSTController, resumePUTController} from "../controllers/resumeController.js";
 import editRoute from './adminEditRoute.js'
 import multer from "multer";
 import { verfiyToken } from "../middlewares/adminAuth.js";
@@ -51,6 +51,11 @@ router.post('/projects',projectPOSTController);
 router.post('/contact',contactPOSTController);
 router.post('/resume',resumePOSTController);
 
-
+//post request
+router.put('/about',upload.single('file'),aboutPUTController);
+router.put('/posts',upload.single('file'),postPUTController);
+router.put('/projects',projectPUTController);
+router.put('/contact',contactPUTController);
+router.put('/resume',resumePUTController);
 
 export default router;
