@@ -1,6 +1,6 @@
 import express from "express";
 import { adminAuthLogin, adminAuthRegister } from "../controllers/adminAuth.js";
-import { aboutController,aboutPOSTController, aboutPUTController } from "../controllers/aboutController.js";
+import { aboutController,aboutDELETEController,aboutPOSTController, aboutPUTController } from "../controllers/aboutController.js";
 import { contactController,contactPOSTController, contactPUTController } from "../controllers/contactController.js";
 import { postController ,postDELETEController,postPOSTController, postPUTController} from "../controllers/postController.js";
 import { projectController ,projectPOSTController, projectPUTController} from "../controllers/projectConroller.js";
@@ -61,6 +61,7 @@ router.put('/resume',resumePUTController);
 // delete request 
 router.delete('/posts',postDELETEController);
 router.delete('/resume',resumeDELETEController);
+router.delete('/about',aboutDELETEController);
 
 
 export default router;

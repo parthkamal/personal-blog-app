@@ -52,5 +52,51 @@ export const aboutPOSTController = async (req, res) => {
 
 //controller for the put request
 export const aboutPUTController = async (req,res)=>{
-    console.log('about put controller fired');
+    const {title,description,id}=req.body;
+    if(!(title,description,id)){
+        res.status(200).json({
+            message: 'invalid edit post request',
+        })
+    }else{
+         const obj = {
+            title, description,
+            image: {
+                data: fs.readFileSync(path.join("uploads/" + req.file.filename)),
+                contentType: "image/png",
+            },
+        };
+        About.findByIdAndUpdate(id, obj).then((post) => {
+            res.status(200).json({
+                post: post,
+                message: 'ye lo tmhari edited post',
+            })
+        }).catch((error) => {
+            console.log(error);
+            res.status(200).json({ message: err });
+        });
+    }
+
+}
+
+export const aboutDELETEController = async (req,res)=>{
+    const json = JSON.parse(req.body.json);
+    const{id}=json;
+    if(!id){
+        res.status(200).json({
+            message:'please attach the id for deletion'
+        })
+    }else{
+        About.findByIdAndDelete(id).then((result)=>{
+            res.status(200).json({
+                result:result,
+                message:'deletion of the post successful',
+            })
+        }).catch((error)=>{
+            console.log(error);
+            res.status(200).json({
+                error:error,
+                message:'error in deleting the post'
+            })
+        })
+    }
 }

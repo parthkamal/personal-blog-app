@@ -4,7 +4,7 @@ import "../../src/App.css";
 import { useLocation } from 'react-router-dom'
 
 function PostUpload(props) {
-    const location = useLocation()
+    const location = useLocation();
     const [file, setFile] = useState();
     const [fileName, setFileName] = useState("");
     const [title, setTitle] = useState("");
