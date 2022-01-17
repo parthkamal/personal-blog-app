@@ -27,12 +27,13 @@ function About() {
         <Navbar />
         <div className="about-group">
             <h1>about section</h1>
-            <Link to='/about/create' >add about post</Link>
+            <Link to='/about/create'>create about</Link>
             {abouts.map((about) => {
                 //convert the image buffer to base64
                 const img = new Buffer.from(about.image.data).toString('base64');
                 return (
                     <div className="about" key={about._id}>
+                        <Link to='/about/create' className='edit'>edit</Link>
                         <img src={`data:image/png;base64,${img}`} alt="" />
                         <div className="about-title">{about.title}</div>
                         <div className="about-description">{about.description}</div>

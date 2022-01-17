@@ -31,6 +31,7 @@ function Posts(props) {
                 const links = post.links.split(' ');
                 return (
                     <div className="about" key={post._id}>
+                        <Link to='/about/create' className='edit'>edit</Link>
                         <img src={`data:image/png;base64,${img}`} alt="" />
                         <div className="about-title">{post.title}</div>
                         <div className="about-description">{post.description}</div>

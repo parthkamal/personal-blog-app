@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import Navbar from '../components/Navbar';
 
 function Projects() {
     const [projects, setProjects] = useState([]);
@@ -18,12 +19,14 @@ function Projects() {
         fetchProjects()
     }, [])
     return <>
+    <Navbar/>
         <div className="project-group">
             <Link to='/projects/create'>add more projects</Link>
             {projects.map((project) => {
                 const description = project.description.split('*');
                 return (
                     <div className="project" key={project._id}>
+                        <Link to='/about/create' className='edit'>edit</Link>
                         <div className="project-title">{project.title}</div>
                         <ul className="project-description">
                             {description.map((point) => {
