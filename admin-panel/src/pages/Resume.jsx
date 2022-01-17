@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 
-function Projects() {
+function Resume() {
     const [resume, setResume] = useState([]);
     useEffect(() => {
         const fetchResume = async () => {
@@ -18,16 +18,32 @@ function Projects() {
         }
         fetchResume();
     }, [])
+    const deleteResume = async (id)=>{
+        try {
+            const headers = {
+                'Content-type':'application/json'
+            }
+            const json= JSON.stringify({id:id});
+            const res= await axios.delete('http://localhost:8080/admin/resume',{data:{json}},{headers});
+            console.log(res.data);
+            alert(res.data.message);
+        } catch (error) {
+            console.log(error);
+        }
+    }
     return <>
-    <Navbar/>
-        <div className="project-group">
+        <Navbar />
+        <div className="about-group">
             <Link to='/resume/create'>add more resume</Link>
             {resume.map((event) => {
                 const description = event.description.split('*');
                 const links = event.links.split(' ');
                 return (
-                    <div className="" key={event._id}>
-                        <Link to='/about/create' className='edit'>edit</Link>
+                    <div className="about" key={event._id}>
+                        <div className="edit-group">
+                            <button onClick={() => deleteResume(event._id)}>delete</button>
+                            <Link to='create' state={{resume:event}} className='edit'>edit</Link>
+                        </div>
                         <div className="project-title">{event.title}</div>
                         <ul className="project-description">
                             {description.map((point) => {
@@ -51,4 +67,4 @@ function Projects() {
     </>;
 }
 
-export default Projects;
+export default Resume;

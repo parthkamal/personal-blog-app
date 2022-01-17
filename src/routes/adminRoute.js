@@ -4,7 +4,7 @@ import { aboutController,aboutPOSTController, aboutPUTController } from "../cont
 import { contactController,contactPOSTController, contactPUTController } from "../controllers/contactController.js";
 import { postController ,postDELETEController,postPOSTController, postPUTController} from "../controllers/postController.js";
 import { projectController ,projectPOSTController, projectPUTController} from "../controllers/projectConroller.js";
-import { resumeController,resumePOSTController, resumePUTController} from "../controllers/resumeController.js";
+import { resumeController,resumeDELETEController,resumePOSTController, resumePUTController} from "../controllers/resumeController.js";
 import editRoute from './adminEditRoute.js'
 import multer from "multer";
 import { verfiyToken } from "../middlewares/adminAuth.js";
@@ -60,5 +60,7 @@ router.put('/resume',resumePUTController);
 
 // delete request 
 router.delete('/posts',postDELETEController);
+router.delete('/resume',resumeDELETEController);
+
 
 export default router;

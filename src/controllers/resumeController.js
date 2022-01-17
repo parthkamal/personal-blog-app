@@ -44,4 +44,45 @@ export const resumePOSTController =  async(req, res) => {
 
 export const resumePUTController = async (req,res)=>{
     console.log('resume put controller fired');
+    const {_id,title,description,links}= req.body;
+    console.log(req.body);
+    if(!(title && description && _id && links)){
+        res.status(200).json({
+            message: 'invalid edit resume request',
+        })
+    }else{
+        const obj = {
+            title,description,links
+        };
+        Resume.findByIdAndUpdate(_id,obj).then((result)=>{
+            res.status(200).json({
+                reume: result,
+                message: 'ye lo tmhari edited post',
+            })
+        }).catch((error)=>{
+            console.log(error);
+            res.status(200).json({ message: error });
+        })
+    }
+}
+
+export const resumeDELETEController = async (req,res)=>{
+    const json = JSON.parse(req.body.json);
+    const {id } = json;
+    if(!id){
+        res.status(200).json({
+            message:'please attach the id for deletion',
+        })
+    }else{
+        Resume.findByIdAndDelete(id).then((result)=>{
+            res.status(200).json({
+                result:result,
+                message:'deletion of the resume successful'
+            })
+        }).catch((error)=>{
+            res.status(200).json({
+                error:error,message:'error deleting the post',
+            })
+        })
+    }
 }
