@@ -87,3 +87,33 @@ export const postPUTController = async (req, res) => {
         });
     }
 };
+
+export const postDELETEController = async (req,res)=>{
+    console.log('delete post controller fired');
+    // console.log(req.body);
+    const json = JSON.parse(req.body.json);
+    // console.log(json);
+    // console.log(id);
+    const {id}= json;
+    console.log(id);
+    //req params validation 
+    if(!id){
+        res.status(200).json({
+            message:'please attach the id for deletion'
+        })
+    }else{
+        //delete operation for the request
+        Post.findByIdAndDelete(id).then((result)=>{
+            res.status(200).json({
+                result:result,
+                message:'deletion of the post successful',
+            })
+        }).catch((error)=>{
+            console.log(error);
+            res.status(200).json({
+                error:error,
+                message:'error in deleting the post'
+            })
+        })
+    }
+}

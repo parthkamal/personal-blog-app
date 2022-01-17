@@ -189,7 +189,23 @@ nav a {
 
 .edit {
   margin-left: auto;
-  background-color: #ff4040 !important;
-  padding: 0.5em !important;
+  padding: 0.3em !important;
+  border-radius: 5px;
+}
+
+.edit-group {
+  align-items: center;
+  display: flex;
+  margin-left: auto;
+  /* width: 10%; */
+  justify-content: space-evenly;
+}
+
+.edit-group button {
+  margin-right: auto;
+  background-color: red;
+  border-style: none;
+  color: white;
+  border-radius: 0;
   border-radius: 5px;
 }

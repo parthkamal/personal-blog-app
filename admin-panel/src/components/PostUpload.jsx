@@ -89,6 +89,7 @@ function PostUpload(props) {
                 }
             );
             console.log('res,', res.data);
+            alert(res.data.message);
         } catch (err) {
             console.log(err);
         }

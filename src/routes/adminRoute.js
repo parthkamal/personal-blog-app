@@ -2,7 +2,7 @@ import express from "express";
 import { adminAuthLogin, adminAuthRegister } from "../controllers/adminAuth.js";
 import { aboutController,aboutPOSTController, aboutPUTController } from "../controllers/aboutController.js";
 import { contactController,contactPOSTController, contactPUTController } from "../controllers/contactController.js";
-import { postController ,postPOSTController, postPUTController} from "../controllers/postController.js";
+import { postController ,postDELETEController,postPOSTController, postPUTController} from "../controllers/postController.js";
 import { projectController ,projectPOSTController, projectPUTController} from "../controllers/projectConroller.js";
 import { resumeController,resumePOSTController, resumePUTController} from "../controllers/resumeController.js";
 import editRoute from './adminEditRoute.js'
@@ -51,11 +51,14 @@ router.post('/projects',projectPOSTController);
 router.post('/contact',contactPOSTController);
 router.post('/resume',resumePOSTController);
 
-//post request
+//put request
 router.put('/about',upload.single('file'),aboutPUTController);
 router.put('/posts',upload.single('file'),postPUTController);
 router.put('/projects',projectPUTController);
 router.put('/contact',contactPUTController);
 router.put('/resume',resumePUTController);
+
+// delete request 
+router.delete('/posts',postDELETEController);
 
 export default router;
